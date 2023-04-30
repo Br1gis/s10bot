@@ -9,7 +9,7 @@ import sqlite3
 
 
 
-client = telebot.TeleBot("5057236580:AAFMFIUGavEp9j42Y-8YoWlLISUAkD4uEW4")
+client = telebot.TeleBot("")
 
 
 
@@ -116,8 +116,8 @@ def goemail(message):
 
 		server = smtplib.SMTP('smtp.mail.ru: 25')
 		server.starttls()
-		server.login("oksry01@mail.ru", "G3x5Dis0WVjPq41zsD7L")
-		server.sendmail("oksry01@mail.ru","bchol@yandex.ru",f"Новое сообщение от пользователя бота Школа 10!\nИмя: {names}\nТекст вопроса: {textmailik}\nНомер телефона для связи: {emailanswer}".encode('utf-8'))
+		server.login("oksry01@mail.ru", "secret")
+		server.sendmail("oksry01@mail.ru","schoolmail@mail.ru",f"Новое сообщение от пользователя бота Школа 10!\nИмя: {names}\nТекст вопроса: {textmailik}\nНомер телефона для связи: {emailanswer}".encode('utf-8'))
 		client.send_message(message.chat.id, 'Ваш вопрос был успешно отправлен на рассмотрение! Ожидайте ответа на указанный номер телефона')
 	except Exception as e:
 		client.send_message(message.chat.id, 'Что-то пошло не так! Попробуйте снова.')
